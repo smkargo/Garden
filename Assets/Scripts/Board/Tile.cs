@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("Grid")]
+    public GridPosition GridPosition;
 
-    // Update is called once per frame
-    void Update()
+    [Header("State")]
+    public bool IsPlayable = true;
+
+    [Header("Visuals")]
+    [SerializeField] protected SpriteRenderer soilRenderer;
+    [SerializeField] protected SpriteRenderer grassRenderer;
+
+    public virtual void Initialize(GridPosition position)
     {
-        
+        GridPosition = position;
     }
 }

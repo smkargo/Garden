@@ -1,16 +1,10 @@
 using UnityEngine;
 
-public class NumberTile : MonoBehaviour
+public class NumberTile : Tile
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("Region")]
+    public int RegionSize;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("Visual")]
+    [SerializeField] private SpriteRenderer numberRenderer;
 }

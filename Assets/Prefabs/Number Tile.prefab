@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8996170496762832864}
+  - component: {fileID: 3531371487833439956}
   m_Layer: 0
   m_Name: Number Tile
   m_TagString: Untagged
@@ -35,6 +36,26 @@ Transform:
   - {fileID: 3879935721683458302}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3531371487833439956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2782976652951119248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3183ad9d4f1eac41ae369d2c520dd71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NumberTile
+  GridPosition:
+    X: 0
+    Y: 0
+  IsPlayable: 1
+  soilRenderer: {fileID: 357568642379380500}
+  grassRenderer: {fileID: 1294036916490847323}
+  RegionSize: 0
+  numberRenderer: {fileID: 7413314099942262577}
 --- !u!1 &4876148029873971276
 GameObject:
   m_ObjectHideFlags: 0

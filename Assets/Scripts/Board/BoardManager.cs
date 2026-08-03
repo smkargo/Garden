@@ -2,15 +2,10 @@ using UnityEngine;
 
 public class BoardManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("References")]
+    [SerializeField] private Tile tilePrefab;
+    [SerializeField] private NumberTile numberTilePrefab;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("Current Level")]
+    [SerializeField] private LevelData currentLevel;
 }
