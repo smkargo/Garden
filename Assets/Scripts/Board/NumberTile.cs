@@ -1,10 +1,12 @@
+using TMPro;
 using UnityEngine;
 
 public class NumberTile : Tile
 {
-    [Header("Region")]
-    public int RegionSize;
+    [SerializeField] private TMP_Text numberText;
 
-    [Header("Visual")]
-    [SerializeField] private SpriteRenderer numberRenderer;
+    public void SetRegionSize(int size)
+    {
+        numberText.text = size.ToString();
+    }
 }

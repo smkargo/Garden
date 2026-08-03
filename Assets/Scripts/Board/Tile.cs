@@ -3,16 +3,13 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     [Header("Grid")]
-    public GridPosition GridPosition;
-
-    [Header("State")]
-    public bool IsPlayable = true;
+    public Vector2Int GridPosition { get; private set; }
 
     [Header("Visuals")]
     [SerializeField] protected SpriteRenderer soilRenderer;
     [SerializeField] protected SpriteRenderer grassRenderer;
 
-    public virtual void Initialize(GridPosition position)
+    public virtual void Initialize(Vector2Int position)
     {
         GridPosition = position;
     }

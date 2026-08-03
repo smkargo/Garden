@@ -12,42 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af95a23eb0f7d9a449cbd3fce9df4cd6, type: 3}
   m_Name: Level_001
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  Width: 4
-  Height: 3
-  Cells:
-  - Exists: 0
-    IsNumberTile: 0
-    RegionSize: 0
-  - Exists: 0
-    IsNumberTile: 0
-    RegionSize: 0
-  - Exists: 0
-    IsNumberTile: 0
-    RegionSize: 0
-  - Exists: 0
-    IsNumberTile: 0
-    RegionSize: 0
-  - Exists: 0
-    IsNumberTile: 0
-    RegionSize: 0
-  - Exists: 0
-    IsNumberTile: 0
-    RegionSize: 0
-  - Exists: 0
-    IsNumberTile: 0
-    RegionSize: 0
-  - Exists: 0
-    IsNumberTile: 0
-    RegionSize: 0
-  - Exists: 0
-    IsNumberTile: 0
-    RegionSize: 0
-  - Exists: 0
-    IsNumberTile: 0
-    RegionSize: 0
-  - Exists: 0
-    IsNumberTile: 0
-    RegionSize: 0
-  - Exists: 0
-    IsNumberTile: 0
-    RegionSize: 0
+  LevelName: Level_001
+  Board:
+    Width: 3
+    Height: 2
+    Cells:
+    - CellId: 0
+      Exists: 1
+      IsNumberTile: 1
+      RegionSize: 6
+      RegionId: -1
+    - CellId: 1
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 2
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 3
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 4
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 5
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+  Notes: 

@@ -5,9 +5,11 @@ public class CellData
 {
     public int CellId = -1;
 
-    public bool Exists = false;
+    public bool Exists;
 
-    public bool IsNumberTile = false;
+    public bool IsNumberTile;
 
-    public int RegionSize = 0;
+    public int RegionSize;
+
+    public int RegionId = -1;
 }

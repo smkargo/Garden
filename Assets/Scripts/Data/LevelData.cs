@@ -1,10 +1,12 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Level", menuName = "Garden Fill/Level Data")]
+[CreateAssetMenu(fileName = "Level", menuName = "Garden Fill/Level")]
 public class LevelData : ScriptableObject
 {
-    public int Width;
-    public int Height;
+    public string LevelName = "Level";
 
-    public CellData[] Cells;
+    public BoardData Board = new BoardData();
+
+    [TextArea]
+    public string Notes;
 }
