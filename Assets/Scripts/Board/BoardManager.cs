@@ -11,8 +11,8 @@ public class BoardManager : MonoBehaviour
 
     [Header("Board")]
     [SerializeField] private Transform boardRoot;
-
     [SerializeField] private float tileSpacing = 1f;
+    [SerializeField] private Vector2 boardOffset = Vector2.zero;
 
     private BoardCell[,] boardCells;
 
@@ -59,12 +59,51 @@ public class BoardManager : MonoBehaviour
 }
 
     private void SpawnCell(CellData data, int x, int y)
-    {
+{
+    Vector3 position = new Vector3(
+        x * tileSpacing + boardOffset.x,
+        -y * tileSpacing + boardOffset.y,
+        0f);
 
+    Tile tile;
+
+    if (data.IsNumberTile)
+    {
+        NumberTile numberTile = Instantiate(
+            numberTilePrefab,
+            position,
+            Quaternion.identity,
+            boardRoot);
+
+        numberTile.Initialize(new Vector2Int(x, y));
+        numberTile.SetRegionSize(data.RegionSize);
+
+        tile = numberTile;
+    }
+    else
+    {
+        tile = Instantiate(
+            tilePrefab,
+            position,
+            Quaternion.identity,
+            boardRoot);
+
+        tile.Initialize(new Vector2Int(x, y));
     }
 
-    private void ClearBoard()
-    {
+    boardCells[x, y] = new BoardCell(
+        data,
+        tile,
+        new Vector2Int(x, y));
+}
+   private void ClearBoard()
+{
+    if (boardRoot == null)
+        return;
 
+    for (int i = boardRoot.childCount - 1; i >= 0; i--)
+    {
+        Destroy(boardRoot.GetChild(i).gameObject);
     }
+}
 }

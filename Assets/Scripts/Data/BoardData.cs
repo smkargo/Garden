@@ -18,7 +18,18 @@ public class BoardData
             Cells[i].CellId = i;
         }
     }
+    public void SetCell(int x, int y, CellData cell)
+{
+    if (!BoardUtility.IsInsideBoard(x, y, Width, Height))
+        return;
 
+    int index = BoardUtility.GetIndex(x, y, Width);
+
+    if (Cells == null || index < 0 || index >= Cells.Length)
+        return;
+
+    Cells[index] = cell;
+}
    public CellData GetCell(int x, int y)
 {
     if (!BoardUtility.IsInsideBoard(x, y, Width, Height))
