@@ -9,8 +9,16 @@ public class Tile : MonoBehaviour
     [SerializeField] protected SpriteRenderer soilRenderer;
     [SerializeField] protected SpriteRenderer grassRenderer;
 
+    [Header("Border")]
+    [SerializeField] private TileBorder border;
+
+    public TileBorder Border => border;
+
     public virtual void Initialize(Vector2Int position)
     {
         GridPosition = position;
+
+        if (border != null)
+            border.HideAll();
     }
 }

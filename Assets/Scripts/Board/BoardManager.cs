@@ -11,11 +11,10 @@ public class BoardManager : MonoBehaviour
 
     [Header("Board")]
     [SerializeField] private Transform boardRoot;
+    [SerializeField] private Transform tileRoot;
+    [SerializeField] private Transform effectRoot;
     [SerializeField] private float tileSpacing = 1f;
-    [SerializeField] private Vector2 boardOffset = Vector2.zero;
-
     private BoardCell[,] boardCells;
-
     private void Start()
     {
         if (level != null)
@@ -48,6 +47,8 @@ public class BoardManager : MonoBehaviour
                 SpawnCell(cell, x, y);
             }
         }
+        BuildBoardSkin();
+        CenterBoard();
     }
     public BoardCell GetCell(Vector2Int position)
 {
@@ -60,21 +61,18 @@ public class BoardManager : MonoBehaviour
 
     private void SpawnCell(CellData data, int x, int y)
 {
-    Vector3 position = new Vector3(
-        x * tileSpacing + boardOffset.x,
-        -y * tileSpacing + boardOffset.y,
+  
+    Vector3 localPosition = new Vector3(
+        x * tileSpacing,
+        -y * tileSpacing,
         0f);
 
     Tile tile;
 
     if (data.IsNumberTile)
     {
-        NumberTile numberTile = Instantiate(
-            numberTilePrefab,
-            position,
-            Quaternion.identity,
-            boardRoot);
-
+        NumberTile numberTile = Instantiate(numberTilePrefab, tileRoot);
+        numberTile.transform.localPosition = localPosition;
         numberTile.Initialize(new Vector2Int(x, y));
         numberTile.SetRegionSize(data.RegionSize);
 
@@ -82,12 +80,8 @@ public class BoardManager : MonoBehaviour
     }
     else
     {
-        tile = Instantiate(
-            tilePrefab,
-            position,
-            Quaternion.identity,
-            boardRoot);
-
+        tile = Instantiate(tilePrefab, tileRoot);
+        tile.transform.localPosition = localPosition;
         tile.Initialize(new Vector2Int(x, y));
     }
 
@@ -98,12 +92,78 @@ public class BoardManager : MonoBehaviour
 }
    private void ClearBoard()
 {
-    if (boardRoot == null)
+    if (tileRoot == null)
         return;
 
-    for (int i = boardRoot.childCount - 1; i >= 0; i--)
+    for (int i = tileRoot.childCount - 1; i >= 0; i--)
     {
-        Destroy(boardRoot.GetChild(i).gameObject);
+        Destroy(tileRoot.GetChild(i).gameObject);
+    }
+
+    if (effectRoot != null)
+    {
+        for (int i = effectRoot.childCount - 1; i >= 0; i--)
+        {
+            Destroy(effectRoot.GetChild(i).gameObject);
+        }
     }
 }
+private void CenterBoard()
+{
+    float width = (level.Board.Width - 1) * tileSpacing;
+    float height = (level.Board.Height - 1) * tileSpacing;
+
+    boardRoot.localPosition = new Vector3(
+        -width * 0.5f,
+         height * 0.5f,
+         0f);
+}
+private void BuildBoardSkin()
+{
+    for (int y = 0; y < level.Board.Height; y++)
+    {
+        for (int x = 0; x < level.Board.Width; x++)
+        {
+            BoardCell cell = boardCells[x, y];
+
+            if (cell == null)
+                continue;
+
+            UpdateBorders(cell);
+        }
+    }
+}
+private void UpdateBorders(BoardCell cell)
+{
+    TileBorder border = cell.Tile.Border;
+
+    border.HideAll();
+
+    bool up    = HasTile(cell.Coordinate + Vector2Int.up);
+    bool down  = HasTile(cell.Coordinate + Vector2Int.down);
+    bool left  = HasTile(cell.Coordinate + Vector2Int.left);
+    bool right = HasTile(cell.Coordinate + Vector2Int.right);
+
+    border.SetTop(!up);
+    border.SetBottom(!down);
+    border.SetLeft(!left);
+    border.SetRight(!right);
+
+    border.SetTopLeft(!up && !left);
+    border.SetTopRight(!up && !right);
+    border.SetBottomLeft(!down && !left);
+    border.SetBottomRight(!down && !right);
+}
+private bool HasTile(Vector2Int position)
+{
+    if (!BoardUtility.IsInsideBoard(
+        position.x,
+        position.y,
+        level.Board.Width,
+        level.Board.Height))
+        return false;
+
+    return boardCells[position.x, position.y] != null;
+}
+
 }
