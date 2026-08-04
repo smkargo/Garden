@@ -14,7 +14,9 @@ public class BoardManager : MonoBehaviour
     [SerializeField] private Transform tileRoot;
     [SerializeField] private Transform effectRoot;
     [SerializeField] private float tileSpacing = 1f;
+    [SerializeField]private RegionManager regionManager;
     private BoardCell[,] boardCells;
+    public LevelData Level => level;
     private void Start()
     {
         if (level != null)
@@ -49,6 +51,7 @@ public class BoardManager : MonoBehaviour
         }
         BuildBoardSkin();
         CenterBoard();
+        regionManager.Build(this);
     }
     public BoardCell GetCell(Vector2Int position)
 {

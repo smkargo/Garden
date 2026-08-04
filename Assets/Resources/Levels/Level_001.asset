@@ -39,8 +39,8 @@ MonoBehaviour:
       RegionId: -1
     - CellId: 4
       Exists: 1
-      IsNumberTile: 1
-      RegionSize: 5
+      IsNumberTile: 0
+      RegionSize: 0
       RegionId: -1
     - CellId: 5
       Exists: 1
@@ -53,7 +53,7 @@ MonoBehaviour:
       RegionSize: 0
       RegionId: -1
     - CellId: 7
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
@@ -64,26 +64,26 @@ MonoBehaviour:
       RegionId: -1
     - CellId: 9
       Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
+      IsNumberTile: 1
+      RegionSize: 5
       RegionId: -1
     - CellId: 10
+      Exists: 1
+      IsNumberTile: 1
+      RegionSize: 5
+      RegionId: -1
+    - CellId: 11
       Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
-    - CellId: 11
-      Exists: 0
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
     - CellId: 12
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
     - CellId: 13
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
@@ -103,7 +103,7 @@ MonoBehaviour:
       RegionSize: 0
       RegionId: -1
     - CellId: 17
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
@@ -114,8 +114,8 @@ MonoBehaviour:
       RegionId: -1
     - CellId: 19
       Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
+      IsNumberTile: 1
+      RegionSize: 5
       RegionId: -1
     - CellId: 20
       Exists: 1
@@ -139,7 +139,7 @@ MonoBehaviour:
       RegionId: -1
     - CellId: 24
       Exists: 1
-      IsNumberTile: 1
-      RegionSize: 5
+      IsNumberTile: 0
+      RegionSize: 0
       RegionId: -1
   Notes: 
