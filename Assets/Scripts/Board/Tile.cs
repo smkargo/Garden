@@ -7,16 +7,17 @@ public class Tile : MonoBehaviour
 
     [Header("Gameplay")]
     public TileState State { get; private set; } = TileState.Empty;
-
     public int RegionId { get; private set; } = -1;
 
     [Header("Visuals")]
     [SerializeField] protected SpriteRenderer soilRenderer;
     [SerializeField] protected SpriteRenderer grassRenderer;
-    [SerializeField] private SpriteRenderer flowerRenderer;
     [SerializeField] private Animator grassAnimator;
-    [SerializeField] private Animator flowerAnimator;
     [SerializeField] private ParticleSystem grassEffect;
+    [SerializeField] private SpriteRenderer[] flowerRenderers;
+    [SerializeField] private Animator[] flowerAnimators;
+
+private int activeFlowerIndex = -1;
 
 
     [Header("Border")]
@@ -37,9 +38,10 @@ public class Tile : MonoBehaviour
         {
             grassRenderer.enabled = false;
         }
-        if (flowerRenderer != null)
+       foreach (var flower in flowerRenderers)
         {
-            flowerRenderer.enabled = false;
+            if (flower != null)
+                flower.enabled = false;
         }
     }
 
@@ -52,17 +54,22 @@ public virtual void Fill(int regionId)
         return;
 
     grassRenderer.enabled = true;
-    flowerRenderer.enabled = false;
+    foreach (var flower in flowerRenderers)
+        {
+            if (flower != null)
+                flower.enabled = false;
+        }
 
-    if (grassAnimator != null)
+   if (grassAnimator != null)
     {
         grassAnimator.Rebind();
         grassAnimator.Update(0f);
         grassAnimator.Play("GrassGrow", 0, 0f);
-        if (grassEffect != null)
-        {
-            grassEffect.Play();
-        }
+    }
+
+    if (grassEffect != null)
+    {
+        grassEffect.Play();
     }
 }
     public virtual void ClearFill()
@@ -72,21 +79,33 @@ public virtual void Fill(int regionId)
 
        if (grassRenderer != null)
         grassRenderer.enabled = false;
-
-    if (flowerRenderer != null)
-        flowerRenderer.enabled = false;
-
-    }
-
-    public virtual void Complete()
-    {
     
-        grassRenderer.enabled = false;
-        flowerRenderer.enabled = true;
-        State = TileState.Completed;
-        if (flowerAnimator != null)
+    foreach (var flower in flowerRenderers)
     {
-        flowerAnimator.Play("FlowerBloom", 0, 0f);
+        if (flower != null)
+            flower.enabled = false;
     }
     }
+
+public virtual void Complete(int flowerType)
+{
+    State = TileState.Completed;
+
+    if (grassRenderer != null)
+        grassRenderer.enabled = false;
+
+    foreach (var flower in flowerRenderers)
+        flower.enabled = false;
+
+    activeFlowerIndex = flowerType;
+
+    flowerRenderers[activeFlowerIndex].enabled = true;
+
+    if (flowerAnimators[activeFlowerIndex] != null)
+    {
+        flowerAnimators[activeFlowerIndex].Rebind();
+        flowerAnimators[activeFlowerIndex].Update(0f);
+        flowerAnimators[activeFlowerIndex].Play("FlowerBloom", 0, 0f);
+    }
+}
 }

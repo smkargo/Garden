@@ -3,12 +3,11 @@ using System.Collections.Generic;
 public class Region
 {
     public int Id;
-
+    public int FlowerType { get; set; }
     public NumberTile StartTile;
     public Tile LastTile =>
     Tiles.Count > 0 ? Tiles[Tiles.Count - 1] : null;
     public int TargetSize;
-
     public RegionState State = RegionState.Inactive;
 
     public List<Tile> Tiles = new();
@@ -41,10 +40,7 @@ public class Region
    public void Complete()
 {
     State = RegionState.Completed;
-
-    foreach (Tile tile in Tiles)
-        tile.Complete();
-
+    RegionAnimationManager.Instance.PlayCompleteAnimation(this);
 }
     public void Reset()
     {

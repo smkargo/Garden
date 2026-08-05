@@ -26,13 +26,11 @@ public class RegionManager : MonoBehaviour
                     continue;
 
                 Region region = new Region();
-
                 region.Id = id++;
                 region.StartTile = numberTile;
                 region.TargetSize = numberTile.TargetSize;
-
+                region.FlowerType = Random.Range(0, 3);
                 region.AddTile(numberTile);
-
                 regions.Add(region);
             }
         }
