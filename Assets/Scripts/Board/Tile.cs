@@ -54,6 +54,7 @@ public virtual void Fill(int regionId)
         return;
 
     grassRenderer.enabled = true;
+    AudioManager.Instance.PlayGrass();
     foreach (var flower in flowerRenderers)
         {
             if (flower != null)
@@ -100,6 +101,7 @@ public virtual void Complete(int flowerType)
     activeFlowerIndex = flowerType;
 
     flowerRenderers[activeFlowerIndex].enabled = true;
+    AudioManager.Instance.PlayFlower();
 
     if (flowerAnimators[activeFlowerIndex] != null)
     {

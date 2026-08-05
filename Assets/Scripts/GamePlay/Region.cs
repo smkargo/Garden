@@ -40,6 +40,7 @@ public class Region
    public void Complete()
 {
     State = RegionState.Completed;
+    AudioManager.Instance.PlayRegionComplete();
     RegionAnimationManager.Instance.PlayCompleteAnimation(this);
 }
     public void Reset()

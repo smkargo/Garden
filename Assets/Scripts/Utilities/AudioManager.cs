@@ -14,6 +14,17 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip regionComplete;
     [SerializeField] private AudioClip levelComplete;
     [SerializeField] private AudioClip buttonClick;
+    [SerializeField] private AudioClip backgroundMusic;
+
+private void Start()
+{
+    if (backgroundMusic != null)
+    {
+        musicSource.clip = backgroundMusic;
+        musicSource.loop = true;
+        musicSource.Play();
+    }
+}
 
     private void Awake()
     {
