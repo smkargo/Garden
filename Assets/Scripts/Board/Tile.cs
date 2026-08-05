@@ -13,6 +13,7 @@ public class Tile : MonoBehaviour
     [Header("Visuals")]
     [SerializeField] protected SpriteRenderer soilRenderer;
     [SerializeField] protected SpriteRenderer grassRenderer;
+    [SerializeField] private SpriteRenderer flowerRenderer;
 
     [Header("Border")]
     [SerializeField] private TileBorder border;
@@ -30,6 +31,7 @@ public class Tile : MonoBehaviour
             border.HideAll();
         if (grassRenderer != null)
         grassRenderer.enabled = false;
+        flowerRenderer.enabled = false;
     }
 
     public virtual void Fill(int regionId)
@@ -46,6 +48,7 @@ public class Tile : MonoBehaviour
     }
 
     grassRenderer.enabled = true;
+    flowerRenderer.enabled = false;
 
 }
     public virtual void ClearFill()
@@ -55,10 +58,14 @@ public class Tile : MonoBehaviour
 
         if (grassRenderer != null)
             grassRenderer.enabled = false;
+
     }
 
     public virtual void Complete()
     {
+    
+        grassRenderer.enabled = false;
+        flowerRenderer.enabled = true;
         State = TileState.Completed;
     }
 }

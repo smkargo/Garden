@@ -12,10 +12,10 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
-    {
-        regionManager.Build(boardManager);
-    }
+   public void InitializeGame()
+{
+    regionManager.Build(boardManager);
+}
 
     public void CheckWin()
     {

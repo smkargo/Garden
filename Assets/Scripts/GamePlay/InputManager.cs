@@ -47,7 +47,7 @@ void BeginInput()
     return;
 }
 
-Debug.Log($"Hit {cell.Tile.name}");
+
 
     if (cell == null)
         return;
@@ -62,8 +62,7 @@ Debug.Log($"Hit {cell.Tile.name}");
 
     controller.BeginRegion(region);
 
-    Debug.Log($"Started Region {region.Id}");
-}
+    }
 void ContinueInput()
 {
     Vector2 pointer = input.Gameplay.Point.ReadValue<Vector2>();
@@ -72,7 +71,6 @@ void ContinueInput()
 
     if (cell == null)
         return;
-    Debug.Log("ContinueInput");
-    controller.TryAddTile(cell.Tile);
+       controller.TryAddTile(cell.Tile);
 }
 }

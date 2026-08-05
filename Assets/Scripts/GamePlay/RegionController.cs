@@ -32,6 +32,8 @@ public class RegionController : MonoBehaviour
 
     if (activeRegion.IsComplete)
         return;
+    if (activeRegion.IsComplete)
+    return;
 
     // Can't paint another region.
     if (tile.State != TileState.Empty &&

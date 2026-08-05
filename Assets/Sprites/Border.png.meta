@@ -137,10 +137,10 @@ TextureImporter:
       name: Border_0
       rect:
         serializedVersion: 2
-        x: 55
-        y: 902
-        width: 285
-        height: 285
+        x: 47
+        y: 901
+        width: 292
+        height: 291
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,9 +160,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 342
-        y: 918
-        width: 572
-        height: 136
+        y: 914
+        width: 568
+        height: 139
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: Border_2
       rect:
         serializedVersion: 2
-        x: 923
-        y: 902
-        width: 284
-        height: 289
+        x: 917
+        y: 901
+        width: 290
+        height: 294
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +203,10 @@ TextureImporter:
       name: Border_3
       rect:
         serializedVersion: 2
-        x: 197
-        y: 385
-        width: 131
-        height: 469
+        x: 198
+        y: 404
+        width: 126
+        height: 438
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,10 +225,10 @@ TextureImporter:
       name: Border_4
       rect:
         serializedVersion: 2
-        x: 926
-        y: 385
-        width: 131
-        height: 469
+        x: 928
+        y: 404
+        width: 125
+        height: 437
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +247,10 @@ TextureImporter:
       name: Border_5
       rect:
         serializedVersion: 2
-        x: 49
-        y: 78
-        width: 288
-        height: 281
+        x: 43
+        y: 72
+        width: 293
+        height: 292
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,10 +269,10 @@ TextureImporter:
       name: Border_6
       rect:
         serializedVersion: 2
-        x: 349
-        y: 174
-        width: 557
-        height: 130
+        x: 347
+        y: 173
+        width: 559
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,10 +291,10 @@ TextureImporter:
       name: Border_7
       rect:
         serializedVersion: 2
-        x: 923
-        y: 80
-        width: 281
-        height: 279
+        x: 918
+        y: 72
+        width: 290
+        height: 291
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
