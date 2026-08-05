@@ -572,6 +572,9 @@ MonoBehaviour:
   soilRenderer: {fileID: 357568642379380500}
   grassRenderer: {fileID: 1294036916490847323}
   flowerRenderer: {fileID: 9174089644397213808}
+  grassAnimator: {fileID: 2644125222852114955}
+  flowerAnimator: {fileID: 0}
+  grassEffect: {fileID: 906093964536719315, guid: c19195e1077e78d4b880c2422f4a4964, type: 3}
   border: {fileID: 6366821346338741197}
   numberText: {fileID: 3290009442719291475}
 --- !u!61 &1985089978475974402
@@ -845,6 +848,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1516176627926874634}
   - component: {fileID: 1294036916490847323}
+  - component: {fileID: 2644125222852114955}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -862,7 +866,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8996170496762832864}
@@ -927,6 +931,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!95 &2644125222852114955
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565908507499017512}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1bcdd2654c80f134db85d81763bfc778, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5880470759142311074
 GameObject:
   m_ObjectHideFlags: 0

@@ -286,6 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5350114199357278788}
   - component: {fileID: 7124257492579451256}
+  - component: {fileID: 5832559462260246750}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -368,6 +369,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!95 &5832559462260246750
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2386186473107938177}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1bcdd2654c80f134db85d81763bfc778, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3272428709427537705
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +844,9 @@ MonoBehaviour:
   soilRenderer: {fileID: 1423438229084540355}
   grassRenderer: {fileID: 7124257492579451256}
   flowerRenderer: {fileID: 6261977635648647385}
+  grassAnimator: {fileID: 5832559462260246750}
+  flowerAnimator: {fileID: 0}
+  grassEffect: {fileID: 906093964536719315, guid: c19195e1077e78d4b880c2422f4a4964, type: 3}
   border: {fileID: 8494417549779023567}
 --- !u!61 &7102949074403369019
 BoxCollider2D:

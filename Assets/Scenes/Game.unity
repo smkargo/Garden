@@ -773,7 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e0bd589122bdf4b87ef5d8443f7f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoardManager
-  level: {fileID: 11400000, guid: 8c74cea3f1fb77e4ea5ec475c1cb4b44, type: 2}
+  level: {fileID: 11400000, guid: 4fc45e1529d3e1f43bb8f3e39f19785e, type: 2}
   tilePrefab: {fileID: 7433783560583410431, guid: 58716a71619eaf244a34e167b995ee23, type: 3}
   numberTilePrefab: {fileID: 3531371487833439956, guid: 6ba3da91f34e5064dbfd3a094e2bb20f, type: 3}
   boardRoot: {fileID: 1386531097}
