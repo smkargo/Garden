@@ -15,13 +15,20 @@ public class RegionAnimationManager : MonoBehaviour
         StartCoroutine(BloomRoutine(region));
     }
 
-    IEnumerator BloomRoutine(Region region)
-    {
-        foreach (Tile tile in region.Tiles)
-        {
-            tile.Complete(region.FlowerType);
+   private IEnumerator BloomRoutine(Region region)
+{
+    AudioManager.Instance.PlayFlower();
 
-            yield return new WaitForSeconds(0.04f);
-        }
+    foreach (Tile tile in region.Tiles)
+    {
+        tile.Complete(region.FlowerType);
+
+        yield return new WaitForSeconds(0.08f);
     }
+
+    // Wait for the last bloom animation to finish
+    yield return new WaitForSeconds(0.5f);
+
+    GameManager.Instance.CheckWin();
+}
 }

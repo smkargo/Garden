@@ -27,7 +27,6 @@ public class Region
 
     if (IsComplete)
         Complete();
-        GameManager.Instance.CheckWin();
 }
     public void RemoveTile(Tile tile)
     {

@@ -101,7 +101,6 @@ public virtual void Complete(int flowerType)
     activeFlowerIndex = flowerType;
 
     flowerRenderers[activeFlowerIndex].enabled = true;
-    AudioManager.Instance.PlayFlower();
 
     if (flowerAnimators[activeFlowerIndex] != null)
     {

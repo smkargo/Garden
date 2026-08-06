@@ -20,6 +20,8 @@ private void OnDisable()
 }
 void Update()
 {
+    if (GameManager.Instance.IsGameCompleted)
+    return;
     if (input.Gameplay.Press.WasPressedThisFrame())
     {
         BeginInput();

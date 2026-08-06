@@ -20,8 +20,6 @@ public class BoardManager : MonoBehaviour
     public LevelData Level => level;
     private void Start()
     {
-        if (level != null)
-            LoadLevel(level);
     }
 
     public void LoadLevel(LevelData levelData)
@@ -53,7 +51,6 @@ public class BoardManager : MonoBehaviour
         BuildBoardSkin();
         CenterBoard();
         cameraController.FitBoard(Level.Board.Width,Level.Board.Height);
-        regionManager.Build(this);
         GameManager.Instance.InitializeGame();
     }
     public BoardCell GetCell(Vector2Int position)

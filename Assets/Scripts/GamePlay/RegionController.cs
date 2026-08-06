@@ -32,9 +32,6 @@ public class RegionController : MonoBehaviour
 
     if (activeRegion.IsComplete)
         return;
-    if (activeRegion.IsComplete)
-    return;
-
     // Can't paint another region.
     if (tile.State != TileState.Empty &&
         tile.RegionId != activeRegion.Id)
@@ -77,6 +74,7 @@ public class RegionController : MonoBehaviour
     }
 
     activeRegion.AddTile(tile);
+    MoveManager.Instance.AddMove();
 }
 public void ResetRegion(Region region)
 {

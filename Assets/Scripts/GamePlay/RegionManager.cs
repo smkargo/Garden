@@ -4,9 +4,9 @@ using UnityEngine;
 public class RegionManager : MonoBehaviour
 {
     private readonly List<Region> regions = new();
-
     public IReadOnlyList<Region> Regions => regions;
-
+    private int lastFlowerType = -1;
+    [SerializeField] private int flowerTypeCount = 3;
     public void Build(BoardManager board)
     {
         regions.Clear();
@@ -29,7 +29,7 @@ public class RegionManager : MonoBehaviour
                 region.Id = id++;
                 region.StartTile = numberTile;
                 region.TargetSize = numberTile.TargetSize;
-                region.FlowerType = Random.Range(0, 3);
+                region.FlowerType = GetRandomFlowerType();
                 region.AddTile(numberTile);
                 regions.Add(region);
             }
@@ -44,5 +44,24 @@ public class RegionManager : MonoBehaviour
     }
 
     return null;
+}
+private int GetRandomFlowerType()
+{
+    if (lastFlowerType == -1)
+    {
+        lastFlowerType = Random.Range(0, flowerTypeCount);
+        return lastFlowerType;
+    }
+
+    int flowerType;
+
+    do
+    {
+        flowerType = Random.Range(0, flowerTypeCount);
+    }
+    while (flowerType == lastFlowerType);
+
+    lastFlowerType = flowerType;
+    return flowerType;
 }
 }
