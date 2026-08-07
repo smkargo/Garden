@@ -3,6 +3,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
+    private bool muted;
 
     [Header("Audio Source")]
     [SerializeField] private AudioSource sfxSource;
@@ -26,17 +27,24 @@ private void Start()
     }
 }
 
+public void ToggleMute()
+{
+    muted = !muted;
+
+    AudioListener.volume = muted ? 0f : 1f;
+}
+
     private void Awake()
+{
+    if (Instance != null && Instance != this)
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
+        return;
     }
+
+    Instance = this;
+    DontDestroyOnLoad(gameObject);
+}
 
     public void PlayGrass()
     {

@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   LevelName: Level_005
   Board:
-    Width: 9
-    Height: 8
+    Width: 7
+    Height: 7
     Cells:
     - CellId: 0
       Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
+      IsNumberTile: 1
+      RegionSize: 8
       RegionId: -1
     - CellId: 1
       Exists: 1
@@ -34,8 +34,8 @@ MonoBehaviour:
       RegionId: -1
     - CellId: 3
       Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
+      IsNumberTile: 1
+      RegionSize: 3
       RegionId: -1
     - CellId: 4
       Exists: 1
@@ -49,8 +49,8 @@ MonoBehaviour:
       RegionId: -1
     - CellId: 6
       Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
+      IsNumberTile: 1
+      RegionSize: 3
       RegionId: -1
     - CellId: 7
       Exists: 1
@@ -58,22 +58,22 @@ MonoBehaviour:
       RegionSize: 0
       RegionId: -1
     - CellId: 8
-      Exists: 1
+      Exists: 0
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
     - CellId: 9
-      Exists: 1
+      Exists: 0
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
     - CellId: 10
-      Exists: 1
+      Exists: 0
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
     - CellId: 11
-      Exists: 1
+      Exists: 0
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
@@ -83,29 +83,29 @@ MonoBehaviour:
       RegionSize: 0
       RegionId: -1
     - CellId: 13
-      Exists: 0
-      IsNumberTile: 0
-      RegionSize: 0
+      Exists: 1
+      IsNumberTile: 1
+      RegionSize: 7
       RegionId: -1
     - CellId: 14
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
     - CellId: 15
-      Exists: 0
-      IsNumberTile: 0
-      RegionSize: 0
+      Exists: 1
+      IsNumberTile: 1
+      RegionSize: 3
       RegionId: -1
     - CellId: 16
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
     - CellId: 17
       Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
+      IsNumberTile: 1
+      RegionSize: 5
       RegionId: -1
     - CellId: 18
       Exists: 1
@@ -114,8 +114,8 @@ MonoBehaviour:
       RegionId: -1
     - CellId: 19
       Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
+      IsNumberTile: 1
+      RegionSize: 2
       RegionId: -1
     - CellId: 20
       Exists: 1
@@ -133,22 +133,22 @@ MonoBehaviour:
       RegionSize: 0
       RegionId: -1
     - CellId: 23
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
     - CellId: 24
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
     - CellId: 25
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
     - CellId: 26
-      Exists: 1
+      Exists: 0
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
@@ -158,12 +158,12 @@ MonoBehaviour:
       RegionSize: 0
       RegionId: -1
     - CellId: 28
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
     - CellId: 29
-      Exists: 1
+      Exists: 0
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
@@ -178,7 +178,7 @@ MonoBehaviour:
       RegionSize: 0
       RegionId: -1
     - CellId: 32
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
@@ -188,7 +188,7 @@ MonoBehaviour:
       RegionSize: 0
       RegionId: -1
     - CellId: 34
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
@@ -198,17 +198,17 @@ MonoBehaviour:
       RegionSize: 0
       RegionId: -1
     - CellId: 36
-      Exists: 1
+      Exists: 0
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
     - CellId: 37
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
     - CellId: 38
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
@@ -218,7 +218,7 @@ MonoBehaviour:
       RegionSize: 0
       RegionId: -1
     - CellId: 40
-      Exists: 1
+      Exists: 0
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
@@ -228,19 +228,19 @@ MonoBehaviour:
       RegionSize: 0
       RegionId: -1
     - CellId: 42
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
     - CellId: 43
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
     - CellId: 44
       Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
+      IsNumberTile: 1
+      RegionSize: 7
       RegionId: -1
     - CellId: 45
       Exists: 1
@@ -248,131 +248,16 @@ MonoBehaviour:
       RegionSize: 0
       RegionId: -1
     - CellId: 46
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
     - CellId: 47
-      Exists: 0
+      Exists: 1
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1
     - CellId: 48
-      Exists: 0
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 49
-      Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 50
-      Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 51
-      Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 52
-      Exists: 0
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 53
-      Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 54
-      Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 55
-      Exists: 0
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 56
-      Exists: 0
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 57
-      Exists: 0
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 58
-      Exists: 0
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 59
-      Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 60
-      Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 61
-      Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 62
-      Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 63
-      Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 64
-      Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 65
-      Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 66
-      Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 67
-      Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 68
-      Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 69
-      Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 70
-      Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
-      RegionId: -1
-    - CellId: 71
       Exists: 1
       IsNumberTile: 0
       RegionSize: 0

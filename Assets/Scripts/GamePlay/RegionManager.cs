@@ -7,6 +7,10 @@ public class RegionManager : MonoBehaviour
     public IReadOnlyList<Region> Regions => regions;
     private int lastFlowerType = -1;
     [SerializeField] private int flowerTypeCount = 3;
+    public void Clear()
+{
+    regions.Clear();
+}
     public void Build(BoardManager board)
     {
         regions.Clear();
@@ -63,5 +67,36 @@ private int GetRandomFlowerType()
 
     lastFlowerType = flowerType;
     return flowerType;
+}
+public bool AreAllRegionsCompleted()
+{
+    foreach (Region region in regions)
+    {
+        if (!region.IsComplete)
+            return false;
+    }
+
+    return true;
+}
+public Region GetRegion(int id)
+{
+    foreach (Region region in regions)
+    {
+        if (region.Id == id)
+            return region;
+    }
+
+    return null;
+}
+
+public int RegionCount => regions.Count;
+
+public void ResetAllRegions()
+{
+    foreach (Region region in regions)
+    {
+        region.Reset();
+        region.AddTile(region.StartTile);
+    }
 }
 }

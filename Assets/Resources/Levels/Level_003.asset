@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   LevelName: Level_003
   Board:
-    Width: 2
-    Height: 2
+    Width: 5
+    Height: 5
     Cells:
     - CellId: 0
-      Exists: 1
-      IsNumberTile: 1
-      RegionSize: 4
+      Exists: 0
+      IsNumberTile: 0
+      RegionSize: 0
       RegionId: -1
     - CellId: 1
       Exists: 1
-      IsNumberTile: 0
-      RegionSize: 0
+      IsNumberTile: 1
+      RegionSize: 2
       RegionId: -1
     - CellId: 2
       Exists: 1
@@ -33,7 +33,112 @@ MonoBehaviour:
       RegionSize: 0
       RegionId: -1
     - CellId: 3
+      Exists: 0
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 4
+      Exists: 0
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 5
+      Exists: 0
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 6
       Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 7
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 8
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 9
+      Exists: 1
+      IsNumberTile: 1
+      RegionSize: 2
+      RegionId: -1
+    - CellId: 10
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 11
+      Exists: 1
+      IsNumberTile: 1
+      RegionSize: 5
+      RegionId: -1
+    - CellId: 12
+      Exists: 1
+      IsNumberTile: 1
+      RegionSize: 5
+      RegionId: -1
+    - CellId: 13
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 14
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 15
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 16
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 17
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 18
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 19
+      Exists: 0
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 20
+      Exists: 0
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 21
+      Exists: 0
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 22
+      Exists: 1
+      IsNumberTile: 1
+      RegionSize: 3
+      RegionId: -1
+    - CellId: 23
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 24
+      Exists: 0
       IsNumberTile: 0
       RegionSize: 0
       RegionId: -1

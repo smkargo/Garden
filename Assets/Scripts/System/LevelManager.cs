@@ -11,10 +11,9 @@ public class LevelManager : MonoBehaviour
     private int currentLevelIndex;
 
     public int CurrentLevelIndex => currentLevelIndex;
-
-    private void Start()
+private void Start()
 {
-    LoadLevel(0);
+    LoadLevel(GameSession.SelectedLevel);
 }
 
     private void Awake()
@@ -39,11 +38,16 @@ public class LevelManager : MonoBehaviour
         LoadLevel(currentLevelIndex);
     }
 
-    public void LoadNextLevel()
+   public void LoadNextLevel()
+{
+    int nextLevel = currentLevelIndex + 1;
+
+    if (nextLevel >= levelDatabase.Levels.Count)
     {
-        if (currentLevelIndex + 1 < levelDatabase.Levels.Count)
-            LoadLevel(currentLevelIndex + 1);
-        else
-            Debug.Log("No more levels.");
+        Debug.Log("Game Completed!");
+        return;
     }
+
+    LoadLevel(nextLevel);
+}
 }

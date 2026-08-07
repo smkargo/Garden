@@ -4,8 +4,6 @@ using TMPro;
 
 public class LevelCompleteUI : MonoBehaviour
 {
-    public static LevelCompleteUI Instance;
-
     [SerializeField] private Animator panelAnimator;
     [SerializeField] private GameObject panel;
     [SerializeField] private Animator[] starAnimators;
@@ -14,8 +12,6 @@ public class LevelCompleteUI : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
-
         panel.SetActive(false);
 
         foreach (Animator star in starAnimators)
@@ -28,9 +24,17 @@ public class LevelCompleteUI : MonoBehaviour
     }
 
     public void Hide()
+{
+    panel.SetActive(false);
+
+    foreach (Animator star in starAnimators)
     {
-        panel.SetActive(false);
+        star.gameObject.SetActive(false);
+
+        star.Rebind();
+        star.Update(0f);
     }
+}
 
    private IEnumerator ShowRoutine()
 {
@@ -84,7 +88,7 @@ public class LevelCompleteUI : MonoBehaviour
         {
             starAnimators[i].gameObject.SetActive(true);
 
-            starAnimators[i].Play("StarPop", 0, 0f);
+            starAnimators[i].Play("starpopup", 0, 0f);
 
             yield return new WaitForSeconds(0.25f);
         }

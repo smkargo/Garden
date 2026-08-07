@@ -2,54 +2,51 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; }
+
     [SerializeField] private BoardManager boardManager;
     [SerializeField] private RegionManager regionManager;
+
     public bool IsGameCompleted { get; private set; }
-    public static GameManager Instance { get; private set; }
 
     private void Awake()
     {
         Instance = this;
     }
 
-  public void InitializeGame()
-{
-    // Build all regions first
-    regionManager.Build(boardManager);
-
-    int perfectMoves = 0;
-
-    foreach (Region region in regionManager.Regions)
+    public void InitializeGame()
     {
-        perfectMoves += region.TargetSize - 1;
-    }
+        regionManager.Build(boardManager);
 
-    MoveManager.Instance.Initialize(perfectMoves);
-}
+        MoveManager.Instance.Initialize(regionManager.Regions);
+
+        IsGameCompleted = false;
+    }
 
     public void CheckWin()
-{
-     if (IsGameCompleted)
-        return;
-
-    foreach (Region region in regionManager.Regions)
     {
-        if (!region.IsComplete)
+        if (IsGameCompleted)
             return;
-    }
 
-    IsGameCompleted = true;
-    if (LevelCompleteUI.Instance == null)
-{
-    return;
-}
-    LevelCompleteUI.Instance.Show();
-}
-public void ResetGame()
-{
-    IsGameCompleted = false;
+        if (!regionManager.AreAllRegionsCompleted())
+            return;
 
-    if (LevelCompleteUI.Instance != null)
-        LevelCompleteUI.Instance.Hide();
-}
+        IsGameCompleted = true;
+
+        int level = LevelManager.Instance.CurrentLevelIndex;
+        int stars = MoveManager.Instance.GetStars();
+        int moves = MoveManager.Instance.CurrentMoves;
+
+        SaveManager.Instance.SaveResult(level, stars, moves);
+
+        // Unlock the next level
+        SaveManager.Instance.UnlockLevel(level + 1);
+        UIManager.Instance.ShowLevelComplete();
+            }
+
+    public void ResetGame()
+    {
+        IsGameCompleted = false;
+        UIManager.Instance.HideLevelComplete();
+            }
 }

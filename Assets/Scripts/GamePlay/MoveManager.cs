@@ -1,5 +1,5 @@
+using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class MoveManager : MonoBehaviour
 {
@@ -13,31 +13,47 @@ public class MoveManager : MonoBehaviour
         Instance = this;
     }
 
-    public void Initialize(int perfectMoves)
-{
-    PerfectMoves = perfectMoves;
-    CurrentMoves = 0;
-}
+    public void Initialize(IReadOnlyList<Region> regions)
+    {
+        CurrentMoves = 0;
+        PerfectMoves = CalculatePerfectMoves(regions);
+    }
+
+    private int CalculatePerfectMoves(IReadOnlyList<Region> regions)
+    {
+        int moves = 0;
+
+        foreach (Region region in regions)
+        {
+            moves += region.TargetSize - 1;
+        }
+
+        return moves;
+    }
 
     public void AddMove()
     {
         CurrentMoves++;
     }
+
+    public void ResetMoves()
+    {
+        CurrentMoves = 0;
+    }
+
     public int GetStars()
-{
-    if (CurrentMoves <= PerfectMoves)
-        return 3;
+    {
+        if (CurrentMoves <= PerfectMoves)
+            return 3;
 
-    float ratio = (float)CurrentMoves / PerfectMoves;
+        float ratio = (float)CurrentMoves / PerfectMoves;
 
-    if (ratio <= 1.2f)
-        return 2;
+        if (ratio <= 1.2f)
+            return 2;
 
-    if (ratio <= 1.5f)
-        return 1;
+        if (ratio <= 1.5f)
+            return 1;
 
-    return 0;
-}
-
-
+        return 0;
+    }
 }
