@@ -10,87 +10,167 @@ public class LevelCompleteUI : MonoBehaviour
     [SerializeField] private TMP_Text resultText;
     [SerializeField] private TMP_Text moveText;
 
+    [Header("Animation Timing")]
+    [SerializeField] private float panelDelay = 0.4f;
+    [SerializeField] private float panelAnimationDuration = 0.5f;
+    [SerializeField] private float starDelay = 0.25f;
+
+    private Coroutine showCoroutine;
+
     private void Awake()
     {
-        panel.SetActive(false);
+        if (panel != null)
+            panel.SetActive(false);
 
-        foreach (Animator star in starAnimators)
-            star.gameObject.SetActive(false);
+        HideStars();
     }
 
     public void Show()
     {
-        StartCoroutine(ShowRoutine());
+        if (showCoroutine != null)
+            StopCoroutine(showCoroutine);
+
+        showCoroutine = StartCoroutine(ShowRoutine());
     }
 
     public void Hide()
-{
-    panel.SetActive(false);
-
-    foreach (Animator star in starAnimators)
     {
-        star.gameObject.SetActive(false);
+        if (showCoroutine != null)
+        {
+            StopCoroutine(showCoroutine);
+            showCoroutine = null;
+        }
 
+        if (panel != null)
+            panel.SetActive(false);
+
+        HideStars();
+    }
+
+    private IEnumerator ShowRoutine()
+    {
+        // -------------------------------------------------
+        // WAIT BEFORE SHOWING COMPLETION PANEL
+        // -------------------------------------------------
+
+        yield return new WaitForSecondsRealtime(panelDelay);
+
+        // -------------------------------------------------
+        // SHOW PANEL
+        // -------------------------------------------------
+
+        panel.SetActive(true);
+
+        // Reset panel animation
+        panelAnimator.Rebind();
+        panelAnimator.Update(0f);
+
+        // Play panel entrance
+        panelAnimator.Play("PanelShow", 0, 0f);
+
+        // Level complete sound
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayLevelComplete();
+        }
+
+        // -------------------------------------------------
+        // SET TEXT
+        // -------------------------------------------------
+
+        int stars =
+            MoveManager.Instance.GetStars();
+
+        switch (stars)
+        {
+            case 3:
+                resultText.text = "Perfect Garden!";
+                break;
+
+            case 2:
+                resultText.text = "Beautiful Garden!";
+                break;
+
+            case 1:
+                resultText.text = "Garden Restored!";
+                break;
+
+            default:
+                resultText.text = "Keep Growing!";
+                break;
+        }
+
+        // -------------------------------------------------
+        // MOVE TEXT
+        // -------------------------------------------------
+
+        if (stars == 3)
+        {
+            moveText.text =
+                $"Completed in {MoveManager.Instance.CurrentMoves} moves";
+        }
+        else
+        {
+            moveText.text =
+                $"Completed in {MoveManager.Instance.CurrentMoves} moves\n" +
+                $"Perfect: {MoveManager.Instance.PerfectMoves} moves";
+        }
+
+        // -------------------------------------------------
+        // WAIT FOR PANEL ANIMATION
+        // -------------------------------------------------
+
+        yield return new WaitForSecondsRealtime(
+            panelAnimationDuration
+        );
+
+        // -------------------------------------------------
+        // NOW SHOW STARS
+        // -------------------------------------------------
+
+        yield return StartCoroutine(
+            ShowStars(stars)
+        );
+
+        showCoroutine = null;
+    }
+
+   private IEnumerator ShowStars(int stars)
+{
+    for (int i = 0; i < stars; i++)
+    {
+        Animator star = starAnimators[i];
+
+        if (star == null)
+            continue;
+
+        // Make sure the star is active.
+        star.gameObject.SetActive(true);
+
+        // Reset animation while the panel AND star are active.
         star.Rebind();
         star.Update(0f);
-    }
-}
 
-   private IEnumerator ShowRoutine()
-{
-    panel.SetActive(true);
+        // Play popup animation.
+        star.Play("starpopup", 0, 0f);
 
-    panelAnimator.Play("PanelShow", 0, 0f);
-
-    yield return new WaitForSeconds(0.4f);
-
-    int stars = MoveManager.Instance.GetStars();
-
-    // Set the result message
-    switch (stars)
-    {
-        case 3:
-            resultText.text = "Perfect Garden!";
-            break;
-
-        case 2:
-            resultText.text = "Beautiful Garden!";
-            break;
-
-        case 1:
-            resultText.text = "Garden Restored!";
-            break;
-
-        default:
-            resultText.text = "Keep Growing!";
-            break;
-    }
-
-    // Set the move information
-    if (stars == 3)
-    {
-        moveText.text =
-            $"Completed in {MoveManager.Instance.CurrentMoves} moves";
-    }
-    else
-    {
-        moveText.text =
-            $"Completed in {MoveManager.Instance.CurrentMoves} moves\n" +
-            $"Perfect: {MoveManager.Instance.PerfectMoves} moves";
-    }
-
-    yield return StartCoroutine(ShowStars(stars));
-}
-
-    private IEnumerator ShowStars(int stars)
-    {
-        for (int i = 0; i < stars; i++)
+        // Star reveal sound.
+        if (AudioManager.Instance != null)
         {
-            starAnimators[i].gameObject.SetActive(true);
-
-            starAnimators[i].Play("starpopup", 0, 0f);
-
-            yield return new WaitForSeconds(0.25f);
+            AudioManager.Instance.PlayStarReveal();
         }
+
+        yield return new WaitForSecondsRealtime(starDelay);
     }
+}
+   private void HideStars()
+{
+    foreach (Animator star in starAnimators)
+    {
+        if (star == null)
+            continue;
+
+        star.gameObject.SetActive(false);
+    }
+}
 }

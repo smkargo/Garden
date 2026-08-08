@@ -352,6 +352,7 @@ MonoBehaviour:
   levelComplete: {fileID: 8300000, guid: f90b532bf0f2c484cbba4ef1ac5b58db, type: 3}
   buttonClick: {fileID: 8300000, guid: 9b53b03557d1e534d969129c15c06516, type: 3}
   backgroundMusic: {fileID: 8300000, guid: 7e9798529af71cb4baf0911fc56417ba, type: 3}
+  starReveal: {fileID: 8300000, guid: 5505aa9a047c631429db318fa62697db, type: 3}
 --- !u!4 &286298176
 Transform:
   m_ObjectHideFlags: 0
@@ -703,6 +704,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 286298175}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &659704324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -910,6 +923,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 286298175}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &956347940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,6 +1027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1576615347}
   - component: {fileID: 1576615346}
+  - component: {fileID: 1576615348}
   m_Layer: 0
   m_Name: Decoration
   m_TagString: Untagged
@@ -1023,11 +1049,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ButterflySpawner
   butterflyPrefab: {fileID: 4739125863294463066, guid: c587698cca187894399b33f865c83ac2, type: 3}
   butterflySprites:
-  - {fileID: -8877341191459053650, guid: c327874dbe9a2f04a8ad0ee894c7a032, type: 3}
-  - {fileID: -461585983442785636, guid: c327874dbe9a2f04a8ad0ee894c7a032, type: 3}
-  - {fileID: 3784156158262995167, guid: c327874dbe9a2f04a8ad0ee894c7a032, type: 3}
-  minSpawnTime: 5
-  maxSpawnTime: 10
+  - {fileID: -7664605693119280686, guid: d8044f6b60da3b04da5a12e8654f6b87, type: 3}
+  - {fileID: -8249794775284251456, guid: d8044f6b60da3b04da5a12e8654f6b87, type: 3}
+  - {fileID: -6652040253308469137, guid: d8044f6b60da3b04da5a12e8654f6b87, type: 3}
+  - {fileID: 376128994888015576, guid: d8044f6b60da3b04da5a12e8654f6b87, type: 3}
+  - {fileID: -279982195315939781, guid: d8044f6b60da3b04da5a12e8654f6b87, type: 3}
+  - {fileID: 8016187688196107647, guid: d8044f6b60da3b04da5a12e8654f6b87, type: 3}
+  - {fileID: 6510696357092688662, guid: d8044f6b60da3b04da5a12e8654f6b87, type: 3}
+  - {fileID: 8365785308237840642, guid: d8044f6b60da3b04da5a12e8654f6b87, type: 3}
+  - {fileID: -3030812186950942862, guid: d8044f6b60da3b04da5a12e8654f6b87, type: 3}
+  - {fileID: -8154452325902183081, guid: d8044f6b60da3b04da5a12e8654f6b87, type: 3}
+  - {fileID: 5547520756319297110, guid: d8044f6b60da3b04da5a12e8654f6b87, type: 3}
+  - {fileID: -7879060649799984851, guid: d8044f6b60da3b04da5a12e8654f6b87, type: 3}
+  minSpawnTime: 3
+  maxSpawnTime: 8
 --- !u!4 &1576615347
 Transform:
   m_ObjectHideFlags: 0
@@ -1043,6 +1078,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1576615348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576615345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41183fa960b8e0b43ad819e43a438596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LeafSpawner
+  leafPrefab: {fileID: 5033645321101170272, guid: 02d4f0edc62f46e419db813304cb49bc, type: 3}
+  leafSprites:
+  - {fileID: 4341780811100112370, guid: c327874dbe9a2f04a8ad0ee894c7a032, type: 3}
+  - {fileID: -4359023651780821494, guid: c327874dbe9a2f04a8ad0ee894c7a032, type: 3}
+  - {fileID: 1056466632592040293, guid: c327874dbe9a2f04a8ad0ee894c7a032, type: 3}
+  - {fileID: -3422656197664417125, guid: c327874dbe9a2f04a8ad0ee894c7a032, type: 3}
+  - {fileID: -5154674602386637609, guid: c327874dbe9a2f04a8ad0ee894c7a032, type: 3}
+  minSpawnTime: 1
+  maxSpawnTime: 3
 --- !u!1 &1650378198
 GameObject:
   m_ObjectHideFlags: 0

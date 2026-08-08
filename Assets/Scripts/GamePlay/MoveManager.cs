@@ -41,19 +41,23 @@ public class MoveManager : MonoBehaviour
         CurrentMoves = 0;
     }
 
-    public int GetStars()
-    {
-        if (CurrentMoves <= PerfectMoves)
-            return 3;
+   public int GetStars()
+{
+    if (PerfectMoves <= 0)
+        return 3;
 
-        float ratio = (float)CurrentMoves / PerfectMoves;
+    float ratio =
+        (float)CurrentMoves / PerfectMoves;
+    if (ratio <= 1.25f)
+        return 3;
 
-        if (ratio <= 1.2f)
-            return 2;
+    if (ratio <= 2f)
+        return 2;
 
-        if (ratio <= 1.5f)
-            return 1;
 
-        return 0;
-    }
+    if (ratio <= 2.75f)
+        return 1;
+
+    return 0;
+}
 }

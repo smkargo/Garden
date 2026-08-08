@@ -27,10 +27,21 @@ private void Start()
         return;
 
     currentLevelIndex = index;
+    
+    GameSession.SelectedLevel = index;
 
     GameManager.Instance.ResetGame();
 
     boardManager.LoadLevel(levelDatabase.Levels[index]);
+
+    // Tell the tutorial that the level changed.
+    TutorialManager tutorial =
+        FindAnyObjectByType<TutorialManager>();
+
+    if (tutorial != null)
+    {
+        tutorial.OnLevelChanged();
+    }
 }
 
     public void RestartLevel()

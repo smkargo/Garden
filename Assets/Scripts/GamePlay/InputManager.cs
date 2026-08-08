@@ -5,6 +5,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] private BoardRaycaster raycaster;
     [SerializeField] private RegionManager regionManager;
     [SerializeField] private RegionController controller;
+    [SerializeField] private TutorialManager tutorialManager;
     private GameInput input;
     private void Awake()
 {
@@ -36,20 +37,22 @@ void Update()
     if (input.Gameplay.Press.WasReleasedThisFrame())
     {
         controller.EndRegion();
+
+        if (tutorialManager != null)
+        {
+            tutorialManager.OnPlayerReleased();
+        }
     }
 }
 void BeginInput()
 {
-    Vector2 pointerPosition = input.Gameplay.Point.ReadValue<Vector2>();
+    Vector2 pointerPosition =
+        input.Gameplay.Point.ReadValue<Vector2>();
 
-    BoardCell cell = raycaster.GetCellUnderPointer(pointerPosition);
-    if (cell == null)
-{
-    Debug.Log("No Cell");
-    return;
-}
-
-
+    BoardCell cell =
+        raycaster.GetCellUnderPointer(
+            pointerPosition
+        );
 
     if (cell == null)
         return;
@@ -57,22 +60,39 @@ void BeginInput()
     if (cell.Tile is not NumberTile numberTile)
         return;
 
-    Region region = regionManager.GetRegion(numberTile);
+    Region region =
+        regionManager.GetRegion(numberTile);
 
     if (region == null)
         return;
 
     controller.BeginRegion(region);
 
+    if (tutorialManager != null)
+    {
+        tutorialManager.OnNumberTilePressed(
+            numberTile
+        );
     }
+}
 void ContinueInput()
 {
-    Vector2 pointer = input.Gameplay.Point.ReadValue<Vector2>();
+    Vector2 pointer =
+        input.Gameplay.Point.ReadValue<Vector2>();
 
-    BoardCell cell = raycaster.GetCellUnderPointer(pointer);
+    BoardCell cell =
+        raycaster.GetCellUnderPointer(pointer);
 
     if (cell == null)
         return;
-       controller.TryAddTile(cell.Tile);
+
+    controller.TryAddTile(cell.Tile);
+
+    if (tutorialManager != null)
+    {
+        tutorialManager.OnTutorialTileEntered(
+            cell.Tile
+        );
+    }
 }
 }

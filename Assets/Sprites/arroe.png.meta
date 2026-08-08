@@ -1,0 +1,245 @@
+fileFormatVersion: 2
+guid: 3140f1e806e22104abb85a52b72cd0a1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2321365340054203127
+    second: arroe_0
+  - first:
+      213: -1816716291781642595
+    second: arroe_1
+  - first:
+      213: 145796569384609849
+    second: arroe_2
+  - first:
+      213: -7712214658732228495
+    second: arroe_3
+  - first:
+      213: -5215246004282451421
+    second: arroe_4
+  - first:
+      213: 7626607100103578733
+    second: arroe_5
+  - first:
+      213: 5938645200051830959
+    second: arroe_6
+  - first:
+      213: -6042878043483687645
+    second: arroe_7
+  - first:
+      213: -1645312141128602036
+    second: arroe_8
+  - first:
+      213: 1843281101349999410
+    second: arroe_9
+  - first:
+      213: -8734487784425052610
+    second: arroe_10
+  - first:
+      213: -2548816586795691457
+    second: arroe_11
+  - first:
+      213: 7485837649645651796
+    second: arroe_12
+  - first:
+      213: 2049585767271541676
+    second: arroe_13
+  - first:
+      213: 4288059045125282567
+    second: arroe_14
+  - first:
+      213: 2489168593021554689
+    second: arroe_15
+  - first:
+      213: -6385807002775540929
+    second: arroe_16
+  - first:
+      213: 5345846016017863271
+    second: arroe_17
+  - first:
+      213: -3660274844025561491
+    second: arroe_18
+  - first:
+      213: 7001074893498938569
+    second: arroe_19
+  - first:
+      213: 986768831030450793
+    second: arroe_20
+  - first:
+      213: 8229325510153680056
+    second: arroe_21
+  - first:
+      213: 7992435437677868865
+    second: arroe_22
+  - first:
+      213: 3361473880861418511
+    second: arroe_23
+  - first:
+      213: 2379517312754144178
+    second: arroe_24
+  - first:
+      213: -8487005718380485957
+    second: arroe_25
+  - first:
+      213: -6622336030639369685
+    second: arroe_26
+  - first:
+      213: -2650885723261238467
+    second: arroe_27
+  - first:
+      213: 6973878571325221313
+    second: arroe_28
+  - first:
+      213: 4068122341917302886
+    second: arroe_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: arroe_0
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 163
+        width: 818
+        height: 918
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9055a28b58ad8cfd0800000000000000
+      internalID: -2321365340054203127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f4a88542bac0e9b44adf45d10878bf07
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      arroe_0: -2321365340054203127
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

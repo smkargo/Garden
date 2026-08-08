@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip levelComplete;
     [SerializeField] private AudioClip buttonClick;
     [SerializeField] private AudioClip backgroundMusic;
+    [SerializeField] private AudioClip starReveal;
 
 private void Start()
 {
@@ -78,4 +79,8 @@ public void ToggleMute()
 
         sfxSource.PlayOneShot(clip);
     }
+    public void PlayStarReveal()
+{
+    PlaySFX(starReveal);
+}
 }
