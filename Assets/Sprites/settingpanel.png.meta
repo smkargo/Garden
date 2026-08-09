@@ -1,10 +1,31 @@
 fileFormatVersion: 2
-guid: 672a278e0b580394b868dc1932eba45a
+guid: 88417dc27a16f474a93ce8b510e81700
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -490242242413125318
-    second: playbutton_0
+      213: 1117790549960630138
+    second: settingpanel_0
+  - first:
+      213: 4769170922822012571
+    second: settingpanel_1
+  - first:
+      213: 7708635442297032197
+    second: settingpanel_2
+  - first:
+      213: -3255891923178904999
+    second: settingpanel_3
+  - first:
+      213: -5355430680280362823
+    second: settingpanel_4
+  - first:
+      213: 6554436947048079927
+    second: settingpanel_5
+  - first:
+      213: -6678531583645416941
+    second: settingpanel_6
+  - first:
+      213: -4468489652421714188
+    second: settingpanel_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playbutton_0
+      name: settingpanel_1
       rect:
         serializedVersion: 2
-        x: 78
-        y: 117
-        width: 1166
-        height: 671
+        x: 105
+        y: 27
+        width: 1080
+        height: 991
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +149,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a312317274f4239f0800000000000000
-      internalID: -490242242413125318
+      spriteID: b9e8de7afaf7f2240800000000000000
+      internalID: 4769170922822012571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: settingpanel_2
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 357
+        width: 270
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50ec919b7139afa60800000000000000
+      internalID: 7708635442297032197
       vertices: []
       indices: 
       edges: []
@@ -138,7 +181,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 95b17bf3d9f3d7f449c1a4c7cfaf00ea
+    spriteID: c06fbf08f1d6b9d47a0d567efd297bf7
     internalID: 0
     vertices: []
     indices: 
@@ -150,7 +193,12 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      playbutton_0: -490242242413125318
+      settingpanel_0: 1117790549960630138
+      settingpanel_1: 4769170922822012571
+      settingpanel_2: 7708635442297032197
+      settingpanel_3: -3255891923178904999
+      settingpanel_4: -5355430680280362823
+      settingpanel_5: 6554436947048079927
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

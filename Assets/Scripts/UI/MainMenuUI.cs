@@ -3,22 +3,30 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
+    [Header("Settings")]
+    [SerializeField] private GameObject settingsPanel;
+
+    private void Start()
+    {
+        if (settingsPanel != null)
+            settingsPanel.SetActive(false);
+    }
+
     public void Play()
-    {GameSession.SelectedLevel = 0;
-SceneManager.LoadScene("LevelSelect");
+    {
+        GameSession.SelectedLevel = 0;
+        SceneManager.LoadScene("LevelSelect");
     }
 
     public void Settings()
     {
-        UIManager.Instance.ShowSettings();
+        if (settingsPanel != null)
+            settingsPanel.SetActive(true);
     }
 
-    public void Quit()
+    public void CloseSettings()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        if (settingsPanel != null)
+            settingsPanel.SetActive(false);
     }
 }

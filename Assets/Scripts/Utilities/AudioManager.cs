@@ -3,7 +3,11 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
+    private bool sfxEnabled = true;
+    private bool musicEnabled = true;
     private bool muted;
+    private const string SFX_KEY = "SFXEnabled";
+    private const string MUSIC_KEY = "MusicEnabled";
 
     [Header("Audio Source")]
     [SerializeField] private AudioSource sfxSource;
@@ -15,37 +19,106 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip regionComplete;
     [SerializeField] private AudioClip levelComplete;
     [SerializeField] private AudioClip buttonClick;
-    [SerializeField] private AudioClip backgroundMusic;
     [SerializeField] private AudioClip starReveal;
 
-private void Start()
-{
-    if (backgroundMusic != null)
-    {
-        musicSource.clip = backgroundMusic;
-        musicSource.loop = true;
-        musicSource.Play();
-    }
-}
+    [Header("Music")]
+    [SerializeField] private AudioClip backgroundMusic;
 
-public void ToggleMute()
-{
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        LoadSettings();
+    }
+
+    private void Start()
+    {
+        SetupMusic();
+    }
+    public void ToggleMute()
+    {
     muted = !muted;
 
     AudioListener.volume = muted ? 0f : 1f;
-}
-
-    private void Awake()
-{
-    if (Instance != null && Instance != this)
+    }
+    private void LoadSettings()
     {
-        Destroy(gameObject);
-        return;
+        sfxEnabled =
+            PlayerPrefs.GetInt(SFX_KEY, 1) == 1;
+
+        musicEnabled =
+            PlayerPrefs.GetInt(MUSIC_KEY, 1) == 1;
+    }
+    private void SetupMusic()
+    {
+        if (musicSource == null)
+            return;
+
+        if (backgroundMusic == null)
+            return;
+
+        musicSource.clip = backgroundMusic;
+        musicSource.loop = true;
+
+        if (musicEnabled)
+        {
+            musicSource.Play();
+        }
     }
 
-    Instance = this;
-    DontDestroyOnLoad(gameObject);
-}
+    public void ToggleMusic()
+    {
+        musicEnabled = !musicEnabled;
+
+        PlayerPrefs.SetInt(
+            MUSIC_KEY,
+            musicEnabled ? 1 : 0
+        );
+
+        PlayerPrefs.Save();
+
+        if (musicSource == null)
+            return;
+
+        if (musicEnabled)
+        {
+            if (!musicSource.isPlaying)
+                musicSource.Play();
+        }
+        else
+        {
+            musicSource.Stop();
+        }
+    }
+
+    public bool IsMusicEnabled()
+    {
+        return musicEnabled;
+    }
+
+    public void ToggleSFX()
+    {
+        sfxEnabled = !sfxEnabled;
+
+        PlayerPrefs.SetInt(
+            SFX_KEY,
+            sfxEnabled ? 1 : 0
+        );
+
+        PlayerPrefs.Save();
+    }
+
+    public bool IsSFXEnabled()
+    {
+        return sfxEnabled;
+    }
 
     public void PlayGrass()
     {
@@ -72,15 +145,21 @@ public void ToggleMute()
         PlaySFX(buttonClick);
     }
 
+    public void PlayStarReveal()
+    {
+        PlaySFX(starReveal);
+    }
     private void PlaySFX(AudioClip clip)
     {
+        if (!sfxEnabled)
+            return;
+
         if (clip == null)
+            return;
+
+        if (sfxSource == null)
             return;
 
         sfxSource.PlayOneShot(clip);
     }
-    public void PlayStarReveal()
-{
-    PlaySFX(starReveal);
-}
 }

@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af95a23eb0f7d9a449cbd3fce9df4cd6, type: 3}
+  m_Name: Level_027
+  m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  LevelName: Level_027
+  Board:
+    Width: 3
+    Height: 7
+    Cells:
+    - CellId: 0
+      Exists: 1
+      IsNumberTile: 1
+      RegionSize: 4
+      RegionId: -1
+    - CellId: 1
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 2
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 3
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 4
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 5
+      Exists: 1
+      IsNumberTile: 1
+      RegionSize: 3
+      RegionId: -1
+    - CellId: 6
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 7
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 8
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 9
+      Exists: 1
+      IsNumberTile: 1
+      RegionSize: 2
+      RegionId: -1
+    - CellId: 10
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 11
+      Exists: 1
+      IsNumberTile: 1
+      RegionSize: 2
+      RegionId: -1
+    - CellId: 12
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 13
+      Exists: 1
+      IsNumberTile: 1
+      RegionSize: 2
+      RegionId: -1
+    - CellId: 14
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 15
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 16
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 17
+      Exists: 1
+      IsNumberTile: 0
+      RegionSize: 0
+      RegionId: -1
+    - CellId: 18
+      Exists: 1
+      IsNumberTile: 1
+      RegionSize: 3
+      RegionId: -1
+    - CellId: 19
+      Exists: 1
+      IsNumberTile: 1
+      RegionSize: 2
+      RegionId: -1
+    - CellId: 20
+      Exists: 1
+      IsNumberTile: 1
+      RegionSize: 3
+      RegionId: -1
+  Notes: 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelCompleteButton : MonoBehaviour
 {
@@ -10,5 +11,9 @@ public class LevelCompleteButton : MonoBehaviour
     public void NextLevel()
     {
         LevelManager.Instance.LoadNextLevel();
+    }
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene("LevelSelect");
     }
 }
